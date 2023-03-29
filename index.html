@@ -5,6 +5,7 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Packs</title>
     <style>
+        /* Default styles */
         body {
           background-color: #333333;
           color: white;
@@ -12,51 +13,77 @@
           padding: 0;
           font-family: Arial, sans-serif;
         }
+
         p{
-            color: greenyellow;
-            font-weight: bold;
-            font-size: 20px;
-            margin: 20px 0;
+          color: greenyellow;
+          font-weight: bold;
+          font-size: 20px;
+          margin: 20px 0;
         }
+
         button{
-            color: black;
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            border-radius: 5px;
-            background-color: #F8DE7E;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 16px;
-            border: none;
-            box-shadow: 2px 2px 2px #888888;
+          color: black;
+          display: block;
+          margin: 20px auto;
+          padding: 10px 20px;
+          border-radius: 5px;
+          background-color: #F8DE7E;
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 16px;
+          border: none;
+          box-shadow: 2px 2px 2px #888888;
         }
+
         label {
-            display: block;
-            margin: 20px 0;
-            font-size: 18px;
+          display: block;
+          margin: 20px 0;
+          font-size: 18px;
         }
+
         input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            box-shadow: 2px 2px 2px #888888;
+          width: 100%;
+          padding: 10px;
+          border-radius: 5px;
+          font-size: 18px;
+          border: none;
+          box-shadow: 2px 2px 2px #888888;
         }
-        @media (min-width: 768px) {
-            /* For screens larger than 768px wide */
-            label, input[type="text"], button {
-                width: 50%;
-                display: inline-block;
-                vertical-align: middle;
-            }
-            label {
-                text-align: right;
-                padding-right: 20px;
-            }
-            button {
-                margin: 20px 0 0 20px;
-            }
+
+        /* Responsive styles */
+        @media only screen and (min-width: 768px) {
+          /* For screens larger than 768px wide */
+          label, input[type="text"], button {
+            width: 50%;
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          label {
+            text-align: right;
+            padding-right: 20px;
+          }
+
+          button {
+            margin: 20px 0 0 20px;
+          }
+        }
+
+        @media only screen and (max-width: 767px) {
+          /* For screens smaller than 768px wide */
+          label, input[type="text"], button {
+            width: 100%;
+            display: block;
+          }
+
+          label {
+            text-align: left;
+            padding-left: 20px;
+          }
+
+          button {
+            margin: 20px auto 0;
+          }
         }
       </style>
   </head>
@@ -67,7 +94,7 @@
     <label for="input2">Bolsa de: </label>
     <input type="text" id="input2"><br><br>
 
-    <button id="submit" class="rainbow-button">Calcula</button>
+    <button id="submit">Calcula</button>
 
     <p id="resultado"></p>
     
