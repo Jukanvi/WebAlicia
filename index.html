@@ -2,19 +2,61 @@
 <html>
   <head>
     <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Packs</title>
     <style>
         body {
           background-color: #333333;
           color: white;
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
         }
         p{
             color: greenyellow;
             font-weight: bold;
             font-size: 20px;
+            margin: 20px 0;
         }
         button{
             color: black;
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #F8DE7E;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            box-shadow: 2px 2px 2px #888888;
+        }
+        label {
+            display: block;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 2px 2px 2px #888888;
+        }
+        @media (min-width: 768px) {
+            /* For screens larger than 768px wide */
+            label, input[type="text"], button {
+                width: 50%;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            label {
+                text-align: right;
+                padding-right: 20px;
+            }
+            button {
+                margin: 20px 0 0 20px;
+            }
         }
       </style>
   </head>
