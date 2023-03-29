@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Calculadora Packs</title>
+    <style>
+        body {
+          background-color: #333333;
+          color: white;
+        }
+        p{
+            color: greenyellow;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        button{
+            color: black;
+        }
+      </style>
+  </head>
+  <body>
+    <label for="input1">Numero Total: </label>
+    <input type="text" id="input1"><br><br>
+    
+    <label for="input2">Bolsa de: </label>
+    <input type="text" id="input2"><br><br>
+
+    <button id="submit" class="rainbow-button">Calcula</button>
+
+    <p id="resultado"></p>
+    
+    <script>
+      // Obtener los elementos input mediante sus IDs
+      const input1 = document.getElementById("input1");
+      const input2 = document.getElementById("input2");
+      const submit = document.getElementById("submit");
+
+      submit.addEventListener("click", () => {
+        //valores
+        numeroTotal = input1.value;
+        numeroPack = input2.value;
+        resultado = numeroTotal / numeroPack;
+        let decimal = parseFloat(resultado); // Convertir la cadena en un valor numérico de punto flotante
+
+        if (!isNaN(decimal) && decimal % 1 !== 0) { // Verificar si el número es decimal
+        let primerosDosDecimales = Math.trunc(decimal); // Obtener los primeros dos dígitos decimales como una cadena de texto
+        numeroAux = primerosDosDecimales * numeroPack;
+        packSolo = numeroTotal - numeroAux;
+        document.getElementById("resultado").innerHTML = 'Tienes que hacer ' + primerosDosDecimales + ' Bolsas de '+ numeroPack +' y una bolsa de ' + packSolo;
+        } 
+        else {
+        console.log("El número no es decimal."); // Mostrar un mensaje si el número no es decimal
+        document.getElementById("resultado").innerHTML = resultado + ' Packs';
+        }
+
+      });
+
+    </script>
+  </body>
+</html>
